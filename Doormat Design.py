@@ -1,14 +1,11 @@
-num = 5
-
-# for i in range(num, 0, -1):
-#     for j in range(0, i):
-#         print("*", end=" ")
-#     print()
 
 
-row = 7
-col = 21
-for i in range(0, row+1, 2):
-    for j in range(0, col+1):
-        print(".|.", end=" ")
-    print()
+row, col = map(int, input("Enter the row and columns: ").split())
+
+for i in range(row // 2):
+    print(".|."*((i * 2)+1)).center(col, "-")
+
+print("WELCOME".center(col, "-"))
+
+for i in range(row // 2, -1, -1):
+    print(".|."*((i * 2)+1)).center(col, "-")
